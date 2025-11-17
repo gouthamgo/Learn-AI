@@ -79,6 +79,57 @@ body {
     opacity: 0.9;
 }
 
+/* Trends Section */
+.trends-section {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.trends-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.trends-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trend-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.trend-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.trend-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.trend-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.trend-card p {
+    opacity: 0.95;
+    line-height: 1.6;
+}
+
 /* Progress Section */
 .progress-section {
     padding: 40px 20px;
