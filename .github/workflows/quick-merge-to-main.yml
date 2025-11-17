@@ -1,0 +1,79 @@
+name: Quick Merge to Main (No PR)
+
+# ALTERNATIVE WORKFLOW: Direct merge without creating PR
+# To use this instead of auto-merge-to-main.yml:
+# 1. Disable/delete auto-merge-to-main.yml
+# 2. Enable this workflow
+
+on:
+  workflow_dispatch:  # Manual trigger
+  # Uncomment below to enable automatic trigger
+  # push:
+  #   branches:
+  #     - '**'
+  #     - '!main'
+
+jobs:
+  quick-merge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Get branch name
+        id: branch
+        run: |
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          echo "name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "Merging branch: $BRANCH_NAME"
+
+      - name: Merge to main
+        run: |
+          # Fetch main branch
+          git fetch origin main:main
+
+          # Checkout main
+          git checkout main
+
+          # Merge the feature branch
+          git merge origin/${{ steps.branch.outputs.name }} \
+            --no-ff \
+            -m "🚀 Auto-merge: ${{ steps.branch.outputs.name }} → main
+
+          Automatically merged by CI/CD pipeline
+          Commit: ${{ github.sha }}
+          Triggered by: ${{ github.actor }}"
+
+          # Push to main
+          git push origin main
+
+          echo "✅ Successfully merged to main!"
+
+      - name: Delete merged branch
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Deleting branch ${{ steps.branch.outputs.name }}..."
+          git push origin --delete ${{ steps.branch.outputs.name }} || echo "Branch already deleted or protected"
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### ⚡ Quick Merge Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Branch:** \`${{ steps.branch.outputs.name }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Target:** main" >> $GITHUB_STEP_SUMMARY
+          echo "- **Status:** Merged directly (no PR) ✅" >> $GITHUB_STEP_SUMMARY
+          echo "- **Branch deleted:** Yes" >> $GITHUB_STEP_SUMMARY

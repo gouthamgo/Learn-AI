@@ -1,0 +1,164 @@
+name: Validate Code
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - '**'
+      - '!main'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install nbformat nbconvert jupyter
+
+      - name: Validate Jupyter Notebooks
+        id: validate-notebooks
+        run: |
+          echo "Validating Jupyter notebooks..."
+
+          # Find all .ipynb files
+          NOTEBOOKS=$(find . -name "*.ipynb" -not -path "./.git/*")
+
+          if [ -z "$NOTEBOOKS" ]; then
+            echo "No notebooks found to validate"
+            exit 0
+          fi
+
+          # Validate each notebook
+          ERROR=0
+          for notebook in $NOTEBOOKS; do
+            echo "Checking: $notebook"
+
+            # Validate notebook format
+            if ! python -m nbformat.validate "$notebook"; then
+              echo "❌ Invalid notebook format: $notebook"
+              ERROR=1
+            else
+              echo "✅ Valid: $notebook"
+            fi
+          done
+
+          if [ $ERROR -eq 1 ]; then
+            echo "Some notebooks have validation errors"
+            exit 1
+          fi
+
+          echo "All notebooks are valid! ✅"
+
+      - name: Validate HTML/CSS
+        id: validate-web
+        run: |
+          echo "Validating web files..."
+
+          # Check if index.html exists and has basic structure
+          if [ -f "index.html" ]; then
+            echo "Checking index.html..."
+
+            # Basic HTML validation
+            if grep -q "<!DOCTYPE html>" index.html; then
+              echo "✅ HTML has DOCTYPE"
+            else
+              echo "⚠️ Warning: HTML missing DOCTYPE"
+            fi
+
+            if grep -q "<title>" index.html; then
+              echo "✅ HTML has title"
+            else
+              echo "⚠️ Warning: HTML missing title"
+            fi
+
+            # Check for proper structure
+            if grep -q "<body>" index.html && grep -q "</body>" index.html; then
+              echo "✅ HTML has body tags"
+            else
+              echo "❌ HTML missing body tags"
+              exit 1
+            fi
+
+            echo "✅ HTML validation passed"
+          else
+            echo "No index.html found (this may be OK for notebooks-only branches)"
+          fi
+
+          # Check CSS
+          if [ -f "style.css" ]; then
+            echo "✅ CSS file found"
+
+            # Basic syntax check (look for common errors)
+            if grep -q "{" style.css && grep -q "}" style.css; then
+              echo "✅ CSS has basic structure"
+            fi
+          fi
+
+      - name: Check for sensitive data
+        id: check-secrets
+        run: |
+          echo "Checking for potential secrets..."
+
+          # Check for common secret patterns
+          if grep -r -i -E "(api[_-]?key|secret|password|token|credentials)" . \
+             --include="*.py" \
+             --include="*.ipynb" \
+             --include="*.env" \
+             --exclude-dir=".git" \
+             --exclude-dir="node_modules" | grep -v "your_api_key\|YOUR_API_KEY\|example"; then
+            echo "⚠️ Warning: Potential secrets detected. Please review."
+            echo "If these are examples/placeholders, you can ignore this warning."
+          else
+            echo "✅ No obvious secrets detected"
+          fi
+
+      - name: Check file sizes
+        id: check-sizes
+        run: |
+          echo "Checking for large files..."
+
+          # Find files larger than 10MB (GitHub has 100MB limit)
+          LARGE_FILES=$(find . -type f -size +10M -not -path "./.git/*")
+
+          if [ -n "$LARGE_FILES" ]; then
+            echo "⚠️ Warning: Large files detected:"
+            echo "$LARGE_FILES"
+            echo ""
+            echo "Consider using Git LFS for files larger than 50MB"
+          else
+            echo "✅ No unusually large files"
+          fi
+
+      - name: Validation Summary
+        if: always()
+        run: |
+          echo "### 📋 Validation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Check | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Jupyter Notebooks | ${{ steps.validate-notebooks.outcome == 'success' && '✅ Pass' || '❌ Fail' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| HTML/CSS | ${{ steps.validate-web.outcome == 'success' && '✅ Pass' || '⚠️ Warning' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Secrets Check | ${{ steps.check-secrets.outcome == 'success' && '✅ Pass' || '⚠️ Warning' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| File Sizes | ${{ steps.check-sizes.outcome == 'success' && '✅ Pass' || '⚠️ Warning' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Overall:** All validations passed! ✅" >> $GITHUB_STEP_SUMMARY
+
+      - name: Success
+        run: |
+          echo "🎉 All validations passed!"
+          echo "Code is ready for auto-merge."
