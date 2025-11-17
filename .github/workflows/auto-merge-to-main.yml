@@ -36,17 +36,47 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # Check if PR already exists
-          PR_NUMBER=$(gh pr list --head "${{ steps.branch.outputs.name }}" --base main --json number --jq '.[0].number')
+          # Check if PR already exists for this branch
+          PR_DATA=$(gh pr list --head "${{ steps.branch.outputs.name }}" --base main --json number,state --jq '.[0]')
 
-          if [ -z "$PR_NUMBER" ]; then
+          if [ -z "$PR_DATA" ] || [ "$PR_DATA" == "null" ]; then
             echo "exists=false" >> $GITHUB_OUTPUT
+            echo "state=none" >> $GITHUB_OUTPUT
             echo "No existing PR found"
           else
+            PR_NUMBER=$(echo "$PR_DATA" | jq -r '.number')
+            PR_STATE=$(echo "$PR_DATA" | jq -r '.state')
+
             echo "exists=true" >> $GITHUB_OUTPUT
             echo "number=$PR_NUMBER" >> $GITHUB_OUTPUT
-            echo "Existing PR #$PR_NUMBER found"
+            echo "state=$PR_STATE" >> $GITHUB_OUTPUT
+            echo "Found PR #$PR_NUMBER with state: $PR_STATE"
           fi
+
+      - name: Check if already merged
+        id: check-merged
+        if: steps.check-pr.outputs.exists == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          PR_STATE="${{ steps.check-pr.outputs.state }}"
+
+          if [ "$PR_STATE" == "MERGED" ]; then
+            echo "✅ PR #${{ steps.check-pr.outputs.number }} is already merged!"
+            echo "merged=true" >> $GITHUB_OUTPUT
+            exit 0
+          else
+            echo "merged=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Exit if already merged
+        if: steps.check-merged.outputs.merged == 'true'
+        run: |
+          echo "::notice::PR already merged. Nothing to do! ✅"
+          echo "### ✅ Already Merged" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "PR #${{ steps.check-pr.outputs.number }} was already merged." >> $GITHUB_STEP_SUMMARY
+          exit 0
 
       - name: Create Pull Request
         if: steps.check-pr.outputs.exists == 'false'
@@ -55,7 +85,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           # Create PR with auto-merge label
-          PR_NUMBER=$(gh pr create \
+          PR_URL=$(gh pr create \
             --title "🚀 Auto-merge: ${{ steps.branch.outputs.name }}" \
             --body "$(cat <<'EOF'
           ## 🤖 Automated Pull Request
@@ -78,13 +108,15 @@ jobs:
           )" \
             --base main \
             --head "${{ steps.branch.outputs.name }}" \
-            --label "auto-merge" | grep -oP '(?<=/pull/)\d+')
+            --label "auto-merge")
 
+          PR_NUMBER=$(echo "$PR_URL" | grep -oP '(?<=/pull/)\d+')
           echo "number=$PR_NUMBER" >> $GITHUB_OUTPUT
           echo "Created PR #$PR_NUMBER"
 
       - name: Get PR number
         id: pr-number
+        if: steps.check-merged.outputs.merged != 'true'
         run: |
           if [ "${{ steps.check-pr.outputs.exists }}" == "true" ]; then
             echo "number=${{ steps.check-pr.outputs.number }}" >> $GITHUB_OUTPUT
@@ -93,6 +125,7 @@ jobs:
           fi
 
       - name: Wait for checks
+        if: steps.check-merged.outputs.merged != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -105,7 +138,7 @@ jobs:
 
           while [ $ELAPSED -lt $TIMEOUT ]; do
             # Get PR status
-            STATUS=$(gh pr view ${{ steps.pr-number.outputs.number }} --json statusCheckRollup --jq '.statusCheckRollup[].conclusion')
+            STATUS=$(gh pr view ${{ steps.pr-number.outputs.number }} --json statusCheckRollup --jq '.statusCheckRollup[].conclusion' 2>/dev/null || echo "")
 
             # Check if all checks passed or if there are no checks
             if [ -z "$STATUS" ]; then
@@ -131,16 +164,39 @@ jobs:
           done
 
       - name: Auto-merge PR
+        if: steps.check-merged.outputs.merged != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           echo "Merging PR #${{ steps.pr-number.outputs.number }}..."
 
+          # Check if PR is still open before merging
+          PR_STATE=$(gh pr view ${{ steps.pr-number.outputs.number }} --json state --jq '.state')
+
+          if [ "$PR_STATE" == "MERGED" ]; then
+            echo "✅ PR was already merged (possibly manually)"
+            exit 0
+          elif [ "$PR_STATE" == "CLOSED" ]; then
+            echo "⚠️ PR was closed without merging"
+            exit 1
+          fi
+
           gh pr merge ${{ steps.pr-number.outputs.number }} \
             --merge \
             --delete-branch \
             --subject "✅ Auto-merge: ${{ steps.branch.outputs.name }} → main" \
-            --body "Automatically merged by CI/CD pipeline"
+            --body "Automatically merged by CI/CD pipeline" \
+            || {
+              echo "::warning::Failed to merge PR. It may have been manually merged."
+              # Check if it was manually merged
+              FINAL_STATE=$(gh pr view ${{ steps.pr-number.outputs.number }} --json state --jq '.state')
+              if [ "$FINAL_STATE" == "MERGED" ]; then
+                echo "✅ PR was manually merged - that's OK!"
+                exit 0
+              else
+                exit 1
+              fi
+            }
 
           echo "✅ Successfully merged and deleted branch!"
 
@@ -150,6 +206,12 @@ jobs:
           echo "### 🎉 Auto-Merge Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "- **Branch:** \`${{ steps.branch.outputs.name }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "- **PR #:** ${{ steps.pr-number.outputs.number }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Status:** Merged to main ✅" >> $GITHUB_STEP_SUMMARY
-          echo "- **Branch deleted:** Yes" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ steps.check-merged.outputs.merged }}" == "true" ]; then
+            echo "- **Status:** Already merged ✅" >> $GITHUB_STEP_SUMMARY
+          elif [ -n "${{ steps.pr-number.outputs.number }}" ]; then
+            echo "- **PR #:** ${{ steps.pr-number.outputs.number }}" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** Merged to main ✅" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- **Status:** Completed" >> $GITHUB_STEP_SUMMARY
+          fi
