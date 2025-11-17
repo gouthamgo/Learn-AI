@@ -1,17 +1,17 @@
 # 🧠 Learn AI - Your Complete AI Learning Journey
 
 ![Status](https://img.shields.io/badge/Status-Complete-success)
-![Lessons](https://img.shields.io/badge/Lessons-63-blue)
-![Weeks](https://img.shields.io/badge/Weeks-21-purple)
+![Lessons](https://img.shields.io/badge/Lessons-66-blue)
+![Weeks](https://img.shields.io/badge/Weeks-22-purple)
 ![Free](https://img.shields.io/badge/Cost-100%25%20Free-brightgreen)
 ![Job Ready](https://img.shields.io/badge/Job%20Market-2025%20Aligned-orange)
 
-**From Zero to Senior AI Engineer in 21 Weeks** - A complete, hands-on learning path with 63 interactive lessons, real projects, and industry-critical skills for 2025!
+**From Zero to Senior AI Engineer in 22 Weeks** - A complete, hands-on learning path with 66 interactive lessons, real projects, and industry-critical skills for 2025!
 
 ## 🎯 What Makes This Different?
 
-✨ **100% Complete** - All 21 weeks live with 63 lessons
-🎯 **2025 Job-Market Aligned** - Week 21 covers skills from actual job postings
+✨ **100% Complete** - All 22 weeks live with 66 lessons
+🎯 **2025 Job-Market Aligned** - Weeks 21-22 cover skills from actual job postings
 💼 **FAANG-Ready** - Advanced RAG, LLM Agents, LoRA, Kubernetes, Spark
 🚀 **Production Skills** - Not just theory - build real systems
 📱 **Interactive** - Every lesson runs in Google Colab (FREE!)
@@ -20,10 +20,10 @@
 ## 🔥 What You'll Master
 
 By completing this course, you'll have:
-- ✅ **63 hands-on lessons** from Python basics to production ML
+- ✅ **66 hands-on lessons** from Python basics to production ML
 - ✅ **12 portfolio-ready AI projects** to land interviews
 - ✅ **Complete AI stack**: Python, ML, Deep Learning, LLMs, Production
-- ✅ **2025 Industry Skills**: SQL, Vector DBs, Advanced RAG, LLM Agents, LoRA, Kubernetes, PySpark
+- ✅ **2025 Industry Skills**: SQL, Vector DBs, Advanced RAG, LLM Agents, LoRA, Kubernetes, PySpark, RecSys, Time Series, Airflow
 - ✅ **Job-ready skills** for Senior ML Engineer, AI Engineer, MLOps roles
 
 ## 🚀 Quick Start (2 Minutes!)
@@ -184,6 +184,30 @@ Production AI and Industry Skills
 - **Kubernetes**: Auto-scaling ML deployment
 - **Graph Databases**: Neo4j for knowledge graphs
 
+### 🎯 Week 22: Job-Critical Skills (BONUS)
+**Close ALL Gaps - 100% Job Market Coverage!**
+
+**Day 1: Recommender Systems** ✅
+- Collaborative Filtering (User-based, Item-based)
+- Matrix Factorization (SVD, ALS, NMF)
+- Content-Based & Hybrid Systems
+- Neural Collaborative Filtering (Deep Learning RecSys)
+- E-commerce recommendation engine project
+
+**Day 2: Time Series Forecasting** ✅
+- **ARIMA/SARIMA**: Classical time series models
+- **Prophet**: Facebook's forecasting library
+- **LSTMs**: Deep learning for time series
+- Retail demand forecasting, stock prediction
+- Complete multi-product forecasting system
+
+**Day 3: Apache Airflow & ML Orchestration** ✅
+- **Apache Airflow**: ML pipeline orchestration
+- DAGs, operators, scheduling
+- **Kubeflow**, **Prefect**, **Argo Workflows**
+- Production ML pipeline with automated training
+- Model deployment automation
+
 ## 🎓 How to Use This Course
 
 ### 1️⃣ Follow the Path
@@ -223,18 +247,19 @@ Start at Week 1 and go sequentially. Don't skip weeks!
 ### For Python Developers
 - Review Weeks 1-3 (quick refresh)
 - Start deep dive at Week 4 (Math)
-- Focus on Weeks 6-21 (ML through Advanced)
+- Focus on Weeks 6-22 (ML through Advanced)
 
 ### For ML Engineers
 - Review Weeks 6-10 (ML fundamentals)
-- Deep dive: Weeks 11-21 (Deep Learning + Industry Skills)
-- Prioritize Week 21 (2025 job market skills)
+- Deep dive: Weeks 11-22 (Deep Learning + Industry Skills)
+- Prioritize Weeks 21-22 (2025 job market skills)
 
 ### For Getting Hired in 2025
 **Must-Complete Weeks:**
 - Week 16: Transformers & LLMs (everyone asks about this)
 - Week 19: MLOps & Deployment (production skills)
 - **Week 21: Industry-Critical Skills** (SQL, Vector DBs, RAG, Agents, LoRA, Kubernetes)
+- **Week 22: Job-Critical Skills** (RecSys, Time Series, Airflow - closes ALL gaps!)
 - Week 20: Portfolio (showcase your work!)
 
 ## 📊 What Skills You'll Gain
@@ -380,6 +405,10 @@ Challenges: Understanding broadcasting
 ## Week 21: Industry Skills 🎯
 Target Start: 2024-12-01
 Priority: Vector databases, LoRA
+
+## Week 22: Job-Critical Skills 🔥
+Target Start: 2024-12-15
+Priority: Recommender systems, time series, Airflow
 ```
 
 ## 🤝 Contributing
@@ -471,8 +500,8 @@ This project is open source and available under the MIT License.
 
 💼 **Hiring?** Check out students who've completed this curriculum - they're ready!
 
-🔥 **21 Weeks | 63 Lessons | 100% Free | Industry-Ready**
+🔥 **22 Weeks | 66 Lessons | 100% Free | Industry-Ready**
 
 ---
 
-**Latest Update:** Week 21 (Industry-Critical Skills) added - Closing all 2025 job market gaps! 🎯
+**Latest Update:** Week 22 (Job-Critical Skills) added - RecSys, Time Series, Airflow! 100% job market coverage! 🎯
