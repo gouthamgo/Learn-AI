@@ -1,76 +1,87 @@
-/* Modern Clean Design - Inspired by shadcn/ui & Acernity UI */
+/* Learn AI - Modern UI (shadcn/ui + v0.dev inspired) */
 
-/* CSS Variables - Modern Color Palette */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ===== CSS Variables ===== */
 :root {
-  /* Colors */
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
-  --primary: 262 83% 58%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 262 83% 58%;
+  /* Base Colors */
+  --background: #ffffff;
+  --foreground: #09090b;
+
+  /* Card */
+  --card: #ffffff;
+  --card-foreground: #09090b;
+
+  /* Borders */
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+
+  /* Primary (Purple/Blue gradient) */
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --primary-foreground: #ffffff;
+
+  /* Secondary */
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+
+  /* Muted */
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+
+  /* Accent */
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+
+  /* Success/Warning/Error */
+  --success: #22c55e;
+  --warning: #eab308;
+  --destructive: #ef4444;
+
+  /* Radius */
   --radius: 0.5rem;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 
-.dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
-  --primary: 262 83% 58%;
-  --primary-foreground: 222.2 47.4% 11.2%;
-  --border: 217.2 32.6% 17.5%;
-}
-
-/* Reset */
+/* ===== Reset ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
-  background: hsl(var(--background));
-  color: hsl(var(--foreground));
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Container */
+/* ===== Container ===== */
 .container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 
-/* Hero Section - Modern Gradient */
+/* ===== Hero Section ===== */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, hsl(262, 83%, 58%) 0%, hsl(262, 90%, 50%) 100%);
-  padding: 6rem 0 4rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 5rem 0 4rem;
   overflow: hidden;
 }
 
@@ -95,29 +106,25 @@ body {
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
-  background: linear-gradient(to bottom, #ffffff, #e0e0e0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .tagline {
-  font-size: clamp(1.1rem, 3vw, 1.5rem);
-  opacity: 0.95;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   margin-bottom: 2.5rem;
+  opacity: 0.95;
   font-weight: 400;
 }
 
 /* Stats Grid */
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 2rem;
-  max-width: 800px;
+  max-width: 750px;
   margin: 0 auto;
   padding: 2rem 0;
 }
@@ -141,10 +148,10 @@ body {
   font-weight: 500;
 }
 
-/* Progress Section */
+/* ===== Progress Section ===== */
 .progress-section {
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: calc(var(--radius) * 2);
   padding: 2rem;
   margin: -3rem auto 3rem;
@@ -165,23 +172,23 @@ body {
 .progress-header h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: hsl(var(--foreground));
+  color: var(--foreground);
 }
 
 .progress-stats {
   display: flex;
   gap: 2rem;
   font-size: 0.9rem;
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
 }
 
 .progress-stats span {
   font-weight: 600;
-  color: hsl(var(--primary));
+  color: var(--primary);
 }
 
 .progress-bar-container {
-  background: hsl(var(--secondary));
+  background: var(--secondary);
   border-radius: 9999px;
   height: 12px;
   overflow: hidden;
@@ -189,12 +196,11 @@ body {
 }
 
 .progress-bar {
-  background: linear-gradient(90deg, hsl(var(--primary)), hsl(262, 90%, 65%));
+  background: linear-gradient(90deg, var(--primary), #8b5cf6);
   height: 100%;
   border-radius: 9999px;
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
 }
 
 .progress-bar::after {
@@ -217,11 +223,11 @@ body {
   margin-top: 0.75rem;
   text-align: center;
   font-size: 0.875rem;
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   font-weight: 500;
 }
 
-/* Section Styles */
+/* ===== Sections ===== */
 section {
   padding: 5rem 0;
 }
@@ -232,45 +238,82 @@ section h2 {
   text-align: center;
   margin-bottom: 3rem;
   letter-spacing: -0.02em;
-  color: hsl(var(--foreground));
+  color: var(--foreground);
 }
 
-/* Week Cards */
-.weeks-container {
+/* ===== Trends Section ===== */
+.trends-section {
+  background: var(--muted);
+}
+
+.trends-grid {
   display: grid;
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
-.week-card {
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
+.trend-card {
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 2rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-.week-card:hover {
-  border-color: hsl(var(--primary));
+.trend-card:hover {
+  border-color: var(--primary);
   box-shadow: var(--shadow-lg);
   transform: translateY(-2px);
 }
 
-.week-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: hsl(var(--primary));
-  transform: scaleY(0);
-  transition: transform 0.3s ease;
+.trend-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-.week-card:hover::before {
-  transform: scaleY(1);
+.trend-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--foreground);
+}
+
+.trend-card p {
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+/* ===== Content Section ===== */
+.content-section {
+  background: var(--background);
+}
+
+.phase-header {
+  margin-bottom: 3rem;
+}
+
+.phase-header h2 {
+  margin-bottom: 0.5rem;
+}
+
+.phase-header p {
+  text-align: center;
+  color: var(--muted-foreground);
+  font-size: 1.1rem;
+}
+
+/* ===== Week Cards ===== */
+.week-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.week-card:hover {
+  box-shadow: var(--shadow-md);
 }
 
 .week-header {
@@ -285,19 +328,26 @@ section h2 {
 .week-header h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: hsl(var(--foreground));
+  color: var(--foreground);
   margin: 0;
 }
 
 .week-status {
   display: inline-flex;
   align-items: center;
-  padding: 0.35rem 0.75rem;
-  background: hsl(var(--secondary));
-  color: hsl(var(--foreground));
+  padding: 0.4rem 1rem;
+  background: var(--secondary);
+  color: var(--foreground);
   border-radius: calc(var(--radius) / 2);
   font-size: 0.875rem;
   font-weight: 500;
+  border: 1px solid var(--border);
+}
+
+.week-description {
+  color: var(--muted-foreground);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
 }
 
 .week-progress {
@@ -306,20 +356,20 @@ section h2 {
   gap: 1rem;
   margin-bottom: 1.5rem;
   padding: 1rem;
-  background: hsl(var(--muted));
+  background: var(--muted);
   border-radius: calc(var(--radius) / 2);
 }
 
 .week-progress-bar {
   flex: 1;
-  background: hsl(var(--background));
+  background: var(--background);
   border-radius: 9999px;
   height: 8px;
   overflow: hidden;
 }
 
 .week-progress-fill {
-  background: hsl(var(--primary));
+  background: linear-gradient(90deg, var(--primary), #8b5cf6);
   height: 100%;
   border-radius: 9999px;
   transition: width 0.3s ease;
@@ -328,50 +378,43 @@ section h2 {
 .week-progress-text {
   font-size: 0.875rem;
   font-weight: 600;
-  color: hsl(var(--primary));
+  color: var(--primary);
   min-width: 3rem;
   text-align: right;
 }
 
-.week-description {
-  color: hsl(var(--muted-foreground));
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
-}
-
-/* Lessons Grid */
+/* ===== Lessons ===== */
 .lessons {
   display: grid;
   gap: 1.25rem;
 }
 
 .lesson-card {
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: calc(var(--radius) / 2);
   padding: 1.5rem;
   transition: all 0.2s ease;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto auto 1fr;
   gap: 1.25rem;
   align-items: start;
-  position: relative;
 }
 
 .lesson-card:hover {
-  background: hsl(var(--accent));
+  background: var(--accent);
   box-shadow: var(--shadow-md);
 }
 
 .lesson-card.completed {
-  background: hsl(210, 40%, 98%);
-  border-color: hsl(var(--primary));
+  background: #fafafa;
+  border-color: var(--primary);
 }
 
 .lesson-checkbox {
   width: 24px;
   height: 24px;
-  border: 2px solid hsl(var(--border));
+  border: 2px solid var(--border);
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -379,19 +422,18 @@ section h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: hsl(var(--background));
-  position: relative;
+  background: var(--background);
   margin-top: 0.25rem;
 }
 
 .lesson-checkbox:hover {
-  border-color: hsl(var(--primary));
-  box-shadow: 0 0 0 4px hsla(var(--primary), 0.1);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
 }
 
 .lesson-checkbox.checked {
-  background: hsl(var(--primary));
-  border-color: hsl(var(--primary));
+  background: var(--primary);
+  border-color: var(--primary);
 }
 
 .lesson-checkbox.checked::after {
@@ -408,7 +450,7 @@ section h2 {
   align-items: center;
   justify-content: center;
   font-size: 1.75rem;
-  background: hsl(var(--secondary));
+  background: var(--secondary);
   border-radius: calc(var(--radius) / 2);
   flex-shrink: 0;
 }
@@ -422,11 +464,11 @@ section h2 {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: hsl(var(--foreground));
+  color: var(--foreground);
 }
 
 .lesson-content p {
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   font-size: 0.95rem;
   margin-bottom: 1rem;
   line-height: 1.6;
@@ -443,10 +485,11 @@ section h2 {
   display: inline-flex;
   align-items: center;
   font-size: 0.85rem;
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   padding: 0.25rem 0.75rem;
-  background: hsl(var(--muted));
+  background: var(--muted);
   border-radius: calc(var(--radius) / 2);
+  border: 1px solid var(--border);
 }
 
 .lesson-buttons {
@@ -455,7 +498,7 @@ section h2 {
   flex-wrap: wrap;
 }
 
-/* Buttons */
+/* ===== Buttons ===== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -466,36 +509,37 @@ section h2 {
   border-radius: calc(var(--radius) / 2);
   text-decoration: none;
   transition: all 0.2s ease;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
   gap: 0.5rem;
 }
 
 .btn-primary {
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
-  box-shadow: var(--shadow-sm);
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-color: var(--primary);
 }
 
 .btn-primary:hover {
-  background: hsl(262, 90%, 50%);
+  background: var(--primary-dark);
   box-shadow: var(--shadow-md);
   transform: translateY(-1px);
 }
 
 .btn-secondary {
-  background: hsl(var(--secondary));
-  color: hsl(var(--secondary-foreground));
-  border: 1px solid hsl(var(--border));
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+  border-color: var(--border);
 }
 
 .btn-secondary:hover {
-  background: hsl(var(--muted));
+  background: var(--accent);
+  border-color: var(--foreground);
 }
 
-/* How It Works */
+/* ===== How It Works ===== */
 .how-it-works {
-  background: hsl(var(--muted));
+  background: var(--muted);
 }
 
 .steps {
@@ -507,8 +551,8 @@ section h2 {
 .step {
   text-align: center;
   padding: 2rem 1.5rem;
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   transition: all 0.3s ease;
 }
@@ -527,7 +571,7 @@ section h2 {
   justify-content: center;
   font-size: 1.75rem;
   font-weight: 700;
-  background: linear-gradient(135deg, hsl(var(--primary)), hsl(262, 90%, 65%));
+  background: linear-gradient(135deg, var(--primary), #8b5cf6);
   color: white;
   border-radius: 50%;
 }
@@ -535,15 +579,20 @@ section h2 {
 .step h3 {
   font-size: 1.25rem;
   margin-bottom: 0.75rem;
-  color: hsl(var(--foreground));
+  color: var(--foreground);
+  font-weight: 600;
 }
 
 .step p {
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   line-height: 1.6;
 }
 
-/* Roadmap */
+/* ===== Roadmap ===== */
+.roadmap {
+  background: var(--background);
+}
+
 .roadmap-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -551,26 +600,27 @@ section h2 {
 }
 
 .roadmap-phase {
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 2rem;
   transition: all 0.3s ease;
 }
 
 .roadmap-phase:hover {
-  border-color: hsl(var(--primary));
+  border-color: var(--primary);
   box-shadow: var(--shadow-lg);
 }
 
 .roadmap-phase h3 {
   font-size: 1.4rem;
   margin-bottom: 0.5rem;
-  color: hsl(var(--foreground));
+  color: var(--foreground);
+  font-weight: 600;
 }
 
 .roadmap-phase p {
-  color: hsl(var(--primary));
+  color: var(--primary);
   font-weight: 600;
   margin-bottom: 1.5rem;
 }
@@ -582,7 +632,7 @@ section h2 {
 
 .roadmap-phase li {
   padding: 0.5rem 0;
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -590,31 +640,36 @@ section h2 {
 
 .roadmap-phase li::before {
   content: '✓';
-  color: hsl(var(--primary));
+  color: var(--primary);
   font-weight: 700;
   flex-shrink: 0;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
-  background: hsl(var(--card));
-  border-top: 1px solid hsl(var(--border));
+  background: var(--card);
+  border-top: 1px solid var(--border);
   padding: 3rem 0;
   text-align: center;
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
+}
+
+footer p {
+  margin-bottom: 0.5rem;
 }
 
 footer a {
-  color: hsl(var(--primary));
+  color: var(--primary);
   text-decoration: none;
-  transition: color 0.2s ease;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
 }
 
 footer a:hover {
-  color: hsl(262, 90%, 50%);
+  opacity: 0.7;
 }
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
   .hero {
     padding: 4rem 0 3rem;
@@ -631,7 +686,11 @@ footer a:hover {
   }
 
   .lesson-card {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto 1fr;
+  }
+
+  .lesson-checkbox {
+    grid-row: 1;
   }
 
   .lesson-icon {
@@ -641,7 +700,17 @@ footer a:hover {
   }
 }
 
-/* Utilities */
+@media (max-width: 480px) {
+  section {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* ===== Utilities ===== */
 .text-center {
   text-align: center;
 }
