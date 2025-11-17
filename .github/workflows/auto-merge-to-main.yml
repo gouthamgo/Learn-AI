@@ -107,8 +107,7 @@ jobs:
           EOF
           )" \
             --base main \
-            --head "${{ steps.branch.outputs.name }}" \
-            --label "auto-merge")
+            --head "${{ steps.branch.outputs.name }}")
 
           PR_NUMBER=$(echo "$PR_URL" | grep -oP '(?<=/pull/)\d+')
           echo "number=$PR_NUMBER" >> $GITHUB_OUTPUT
