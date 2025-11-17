@@ -1,0 +1,155 @@
+name: Auto Merge to Main
+
+on:
+  push:
+    branches:
+      - '**'  # Triggers on any branch
+      - '!main'  # Except main itself
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for all branches
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Get branch name
+        id: branch
+        run: |
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          echo "name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "Branch: $BRANCH_NAME"
+
+      - name: Check if PR exists
+        id: check-pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Check if PR already exists
+          PR_NUMBER=$(gh pr list --head "${{ steps.branch.outputs.name }}" --base main --json number --jq '.[0].number')
+
+          if [ -z "$PR_NUMBER" ]; then
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "No existing PR found"
+          else
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "number=$PR_NUMBER" >> $GITHUB_OUTPUT
+            echo "Existing PR #$PR_NUMBER found"
+          fi
+
+      - name: Create Pull Request
+        if: steps.check-pr.outputs.exists == 'false'
+        id: create-pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Create PR with auto-merge label
+          PR_NUMBER=$(gh pr create \
+            --title "🚀 Auto-merge: ${{ steps.branch.outputs.name }}" \
+            --body "$(cat <<'EOF'
+          ## 🤖 Automated Pull Request
+
+          This PR was automatically created by the CI/CD pipeline.
+
+          **Branch:** \`${{ steps.branch.outputs.name }}\`
+          **Target:** \`main\`
+          **Triggered by:** Push to branch
+
+          ### Changes
+          This PR contains all changes from the \`${{ steps.branch.outputs.name }}\` branch.
+
+          ---
+
+          ✅ **Auto-merge is enabled** - This PR will automatically merge after all checks pass.
+
+          🔄 **Commit:** ${{ github.sha }}
+          EOF
+          )" \
+            --base main \
+            --head "${{ steps.branch.outputs.name }}" \
+            --label "auto-merge" | grep -oP '(?<=/pull/)\d+')
+
+          echo "number=$PR_NUMBER" >> $GITHUB_OUTPUT
+          echo "Created PR #$PR_NUMBER"
+
+      - name: Get PR number
+        id: pr-number
+        run: |
+          if [ "${{ steps.check-pr.outputs.exists }}" == "true" ]; then
+            echo "number=${{ steps.check-pr.outputs.number }}" >> $GITHUB_OUTPUT
+          else
+            echo "number=${{ steps.create-pr.outputs.number }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Wait for checks
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Waiting for CI checks to complete..."
+          sleep 10  # Give time for checks to start
+
+          # Wait up to 5 minutes for checks
+          TIMEOUT=300
+          ELAPSED=0
+
+          while [ $ELAPSED -lt $TIMEOUT ]; do
+            # Get PR status
+            STATUS=$(gh pr view ${{ steps.pr-number.outputs.number }} --json statusCheckRollup --jq '.statusCheckRollup[].conclusion')
+
+            # Check if all checks passed or if there are no checks
+            if [ -z "$STATUS" ]; then
+              echo "No checks found, proceeding with merge"
+              break
+            fi
+
+            # Check if any check failed
+            if echo "$STATUS" | grep -q "FAILURE"; then
+              echo "❌ Some checks failed. Not merging."
+              exit 1
+            fi
+
+            # Check if all checks passed
+            if ! echo "$STATUS" | grep -q "PENDING" && ! echo "$STATUS" | grep -q "IN_PROGRESS"; then
+              echo "✅ All checks passed!"
+              break
+            fi
+
+            echo "Checks still running... (${ELAPSED}s elapsed)"
+            sleep 10
+            ELAPSED=$((ELAPSED + 10))
+          done
+
+      - name: Auto-merge PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Merging PR #${{ steps.pr-number.outputs.number }}..."
+
+          gh pr merge ${{ steps.pr-number.outputs.number }} \
+            --merge \
+            --delete-branch \
+            --subject "✅ Auto-merge: ${{ steps.branch.outputs.name }} → main" \
+            --body "Automatically merged by CI/CD pipeline"
+
+          echo "✅ Successfully merged and deleted branch!"
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### 🎉 Auto-Merge Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Branch:** \`${{ steps.branch.outputs.name }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **PR #:** ${{ steps.pr-number.outputs.number }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Status:** Merged to main ✅" >> $GITHUB_STEP_SUMMARY
+          echo "- **Branch deleted:** Yes" >> $GITHUB_STEP_SUMMARY

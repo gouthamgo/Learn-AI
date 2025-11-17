@@ -116,6 +116,41 @@ At the end of each week/section, build the mini-projects. These go in your portf
 
 **That's it!** You're running Python in the cloud for FREE! 🎉
 
+## 🤖 CI/CD Auto-Merge Pipeline
+
+This repo has a **fully automated CI/CD pipeline** that auto-merges your code to main!
+
+### How It Works:
+```bash
+# Create a feature branch
+git checkout -b feature/week-2
+
+# Make changes, commit
+git add .
+git commit -m "Add Week 2 lessons"
+
+# Push (this triggers auto-merge!)
+git push -u origin feature/week-2
+
+# ✨ Magic happens:
+# 1. PR auto-created
+# 2. Validation checks run
+# 3. Auto-merges to main
+# 4. Branch deleted
+# All in ~1-2 minutes! 🎉
+```
+
+**Zero manual PR merging needed!** 🚀
+
+### Quick Setup (2 minutes):
+1. Go to repo Settings → Actions → General
+2. Enable "Read and write permissions"
+3. Check "Allow GitHub Actions to create and approve pull requests"
+4. Save and test!
+
+📖 **Full guide:** [CI-CD-GUIDE.md](CI-CD-GUIDE.md)
+⚡ **Quick start:** [.github/AUTO-MERGE-QUICKSTART.md](.github/AUTO-MERGE-QUICKSTART.md)
+
 ## 🌐 Deploy Your Website to Vercel
 
 Want to deploy this learning platform? Follow these steps:
