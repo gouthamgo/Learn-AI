@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracker Test</title>
+    <link rel="stylesheet" href="modern-style.css">
+</head>
+<body>
+    <div class="container" style="padding: 2rem 0;">
+        <h1 style="text-align: center; margin-bottom: 2rem;">Progress Tracker Test</h1>
+
+        <!-- Progress Section -->
+        <div class="progress-section">
+            <div class="progress-header">
+                <h3>📊 Your Learning Progress</h3>
+                <div class="progress-stats">
+                    <span class="completed-count">0</span> / <span class="total-count">10</span> lessons completed
+                    <span class="percentage-text">0%</span>
+                </div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 0%"></div>
+            </div>
+            <p class="progress-text">0 of 10 lessons completed</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem;">
+                <button id="reset-progress" class="btn btn-secondary">🔄 Reset Progress</button>
+                <button id="export-progress" class="btn btn-secondary">📥 Export Progress</button>
+                <button id="test-add" class="btn btn-primary">➕ Mark Random Complete</button>
+            </div>
+        </div>
+
+        <!-- Test Lessons -->
+        <div style="margin-top: 3rem;">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Test Lessons</h2>
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 1: Test Week</h3>
+                </div>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📚</div>
+                        <div class="lesson-content">
+                            <h4>Lesson 1: Introduction</h4>
+                            <p>Click the checkbox to mark complete</p>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🔬</div>
+                        <div class="lesson-content">
+                            <h4>Lesson 2: Basics</h4>
+                            <p>Click the checkbox to mark complete</p>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🚀</div>
+                        <div class="lesson-content">
+                            <h4>Lesson 3: Advanced</h4>
+                            <p>Click the checkbox to mark complete</p>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">💡</div>
+                        <div class="lesson-content">
+                            <h4>Lesson 4: Expert</h4>
+                            <p>Click the checkbox to mark complete</p>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🎯</div>
+                        <div class="lesson-content">
+                            <h4>Lesson 5: Master</h4>
+                            <p>Click the checkbox to mark complete</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="week-card" style="margin-top: 2rem;">
+                <div class="week-header">
+                    <h3>Week 2: Another Test Week</h3>
+                </div>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📖</div>
+                        <div class="lesson-content">
+                            <h4>Lesson 6: Topic A</h4>
+                            <p>Click the checkbox to mark complete</p>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🔥</div>
+                        <div class="lesson-content">
+                            <h4>Lesson 7: Topic B</h4>
+                            <p>Click the checkbox to mark complete</p>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">⚡</div>
+                        <div class="lesson-content">
+                            <h4>Lesson 8: Topic C</h4>
+                            <p>Click the checkbox to mark complete</p>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🎨</div>
+                        <div class="lesson-content">
+                            <h4>Lesson 9: Topic D</h4>
+                            <p>Click the checkbox to mark complete</p>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🏆</div>
+                        <div class="lesson-content">
+                            <h4>Lesson 10: Final Project</h4>
+                            <p>Click the checkbox to mark complete</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Debug Info -->
+        <div style="margin-top: 2rem; padding: 1rem; background: #f0f0f0; border-radius: 8px;">
+            <h3>Debug Info</h3>
+            <pre id="debug-info" style="font-size: 12px; overflow: auto;"></pre>
+        </div>
+    </div>
+
+    <script>
+        // Modified progress tracker for testing
+        class ProgressTrackerTest {
+          constructor() {
+            this.storageKey = 'learn-ai-progress-test';
+            this.progress = this.loadProgress();
+            this.totalLessons = 10;
+            this.init();
+            this.showDebugInfo();
+          }
+
+          loadProgress() {
+            try {
+              const saved = localStorage.getItem(this.storageKey);
+              console.log('Loaded progress:', saved);
+              return saved ? JSON.parse(saved) : {};
+            } catch (error) {
+              console.error('Error loading progress:', error);
+              return {};
+            }
+          }
+
+          saveProgress() {
+            try {
+              localStorage.setItem(this.storageKey, JSON.stringify(this.progress));
+              console.log('Saved progress:', this.progress);
+              this.showDebugInfo();
+            } catch (error) {
+              console.error('Error saving progress:', error);
+            }
+          }
+
+          isCompleted(lessonId) {
+            return this.progress[lessonId] === true;
+          }
+
+          toggleLesson(lessonId) {
+            this.progress[lessonId] = !this.progress[lessonId];
+            console.log(`Toggled ${lessonId} to:`, this.progress[lessonId]);
+            this.saveProgress();
+            this.updateUI();
+          }
+
+          getCompletionCount() {
+            const count = Object.values(this.progress).filter(v => v === true).length;
+            console.log('Completion count:', count);
+            return count;
+          }
+
+          getCompletionPercentage() {
+            const completed = this.getCompletionCount();
+            const percentage = Math.round((completed / this.totalLessons) * 100);
+            console.log('Completion percentage:', percentage);
+            return percentage;
+          }
+
+          init() {
+            this.createCheckboxes();
+            this.updateUI();
+            this.addEventListeners();
+          }
+
+          createCheckboxes() {
+            const lessonCards = document.querySelectorAll('.lesson-card');
+            lessonCards.forEach((card, index) => {
+              const lessonId = `lesson-${index + 1}`;
+              card.setAttribute('data-lesson-id', lessonId);
+
+              const checkbox = document.createElement('div');
+              checkbox.className = 'lesson-checkbox';
+              checkbox.setAttribute('role', 'checkbox');
+              checkbox.setAttribute('aria-checked', this.isCompleted(lessonId));
+
+              if (this.isCompleted(lessonId)) {
+                checkbox.classList.add('checked');
+                card.classList.add('completed');
+              }
+
+              const lessonIcon = card.querySelector('.lesson-icon');
+              card.insertBefore(checkbox, lessonIcon);
+            });
+          }
+
+          addEventListeners() {
+            document.querySelectorAll('.lesson-checkbox').forEach(checkbox => {
+              checkbox.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const lessonCard = checkbox.closest('.lesson-card');
+                const lessonId = lessonCard.getAttribute('data-lesson-id');
+                this.toggleLesson(lessonId);
+
+                checkbox.classList.toggle('checked');
+                checkbox.setAttribute('aria-checked', this.isCompleted(lessonId));
+                lessonCard.classList.toggle('completed');
+
+                checkbox.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                  checkbox.style.transform = 'scale(1)';
+                }, 200);
+              });
+            });
+
+            document.getElementById('reset-progress').addEventListener('click', () => {
+              if (confirm('Reset all progress?')) {
+                this.resetProgress();
+              }
+            });
+
+            document.getElementById('test-add').addEventListener('click', () => {
+              // Mark a random uncompleted lesson as complete
+              const uncompleted = [];
+              for (let i = 1; i <= this.totalLessons; i++) {
+                if (!this.isCompleted(`lesson-${i}`)) {
+                  uncompleted.push(`lesson-${i}`);
+                }
+              }
+              if (uncompleted.length > 0) {
+                const randomId = uncompleted[Math.floor(Math.random() * uncompleted.length)];
+                const checkbox = document.querySelector(`[data-lesson-id="${randomId}"] .lesson-checkbox`);
+                if (checkbox) checkbox.click();
+              } else {
+                alert('All lessons already completed!');
+              }
+            });
+          }
+
+          updateUI() {
+            const completed = this.getCompletionCount();
+            const percentage = this.getCompletionPercentage();
+
+            const progressBar = document.querySelector('.progress-bar');
+            const progressText = document.querySelector('.progress-text');
+            const completedCount = document.querySelector('.completed-count');
+            const totalCount = document.querySelector('.total-count');
+            const percentageText = document.querySelector('.percentage-text');
+
+            if (progressBar) progressBar.style.width = `${percentage}%`;
+            if (progressText) progressText.textContent = `${completed} of ${this.totalLessons} lessons completed`;
+            if (completedCount) completedCount.textContent = completed;
+            if (totalCount) totalCount.textContent = this.totalLessons;
+            if (percentageText) percentageText.textContent = `${percentage}%`;
+
+            this.showDebugInfo();
+          }
+
+          resetProgress() {
+            this.progress = {};
+            this.saveProgress();
+
+            document.querySelectorAll('.lesson-checkbox').forEach(checkbox => {
+              checkbox.classList.remove('checked');
+              checkbox.setAttribute('aria-checked', 'false');
+            });
+
+            document.querySelectorAll('.lesson-card').forEach(card => {
+              card.classList.remove('completed');
+            });
+
+            this.updateUI();
+            alert('Progress reset!');
+          }
+
+          showDebugInfo() {
+            const debugEl = document.getElementById('debug-info');
+            if (debugEl) {
+              debugEl.textContent = JSON.stringify({
+                'Total Lessons': this.totalLessons,
+                'Completed Count': this.getCompletionCount(),
+                'Percentage': this.getCompletionPercentage() + '%',
+                'Progress Object': this.progress,
+                'LocalStorage Key': this.storageKey,
+                'LocalStorage Value': localStorage.getItem(this.storageKey)
+              }, null, 2);
+            }
+          }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+          window.tracker = new ProgressTrackerTest();
+          console.log('Progress tracker initialized');
+        });
+    </script>
+</body>
+</html>
