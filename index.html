@@ -4,34 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn AI - Your Personal AI Learning Journey</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Complete AI learning path from zero to AI engineer in 22 weeks. 66 hands-on lessons, 100% free, job-ready skills for 2025.">
+    <link rel="stylesheet" href="modern-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Hero Section -->
     <header class="hero">
         <div class="container">
-            <h1>🧠 Learn AI</h1>
-            <p class="tagline">From Zero to AI Engineer - Your Complete Learning Path</p>
-            <div class="stats">
-                <div class="stat">
-                    <span class="stat-number">22</span>
-                    <span class="stat-label">Weeks</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">12</span>
-                    <span class="stat-label">Projects</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">66</span>
-                    <span class="stat-label">Lessons</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Free</span>
+            <div class="hero-content">
+                <h1>🧠 Learn AI</h1>
+                <p class="tagline">From Zero to AI Engineer - Your Complete Learning Path</p>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">22</span>
+                        <span class="stat-label">Weeks</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">66</span>
+                        <span class="stat-label">Lessons</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Free</span>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- Progress Tracker -->
+    <div class="container">
+        <div class="progress-section">
+            <div class="progress-header">
+                <h3>📊 Your Learning Progress</h3>
+                <div class="progress-stats">
+                    <span class="completed-count">0</span> / <span class="total-count">66</span> lessons completed
+                    <span class="percentage-text">0%</span>
+                </div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 0%"></div>
+            </div>
+            <p class="progress-text">0 of 66 lessons completed</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
+                <button id="reset-progress" class="btn btn-secondary">🔄 Reset Progress</button>
+                <button id="export-progress" class="btn btn-secondary">📥 Export Progress</button>
+            </div>
+        </div>
+    </div>
 
     <!-- AI Trends 2024-2025 -->
     <section class="trends-section">
@@ -1635,18 +1662,7 @@
         </div>
     </footer>
 
-    <script>
-        // Simple progress tracking (localStorage)
-        document.addEventListener('DOMContentLoaded', function() {
-            // Track lesson clicks
-            const lessonLinks = document.querySelectorAll('.btn-primary');
-            lessonLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    console.log('Lesson started!');
-                    // Future: track progress
-                });
-            });
-        });
-    </script>
+    <!-- Progress Tracker Script -->
+    <script src="progress-tracker.js"></script>
 </body>
 </html>
