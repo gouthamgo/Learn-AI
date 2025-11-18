@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn AI - Your Personal AI Learning Journey</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modern-style.css">
 </head>
 <body>
     <!-- Hero Section -->
@@ -141,6 +141,33 @@
                         <li>⭐ Industry Skills (Bonus) ✅</li>
                         <li>🎯 Job-Critical Skills (Bonus) ✅</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Tracker -->
+    <section class="progress-section">
+        <div class="container">
+            <div class="progress-card">
+                <h2>📊 Your Learning Progress</h2>
+                <div class="progress-header">
+                    <div class="progress-stats">
+                        <span class="completed-count">0</span> / <span class="total-count">66</span> lessons completed
+                        <span class="percentage-text">0%</span>
+                    </div>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 0%">0%</div>
+                </div>
+                <p class="progress-text">0 of 66 lessons completed</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
+                    <button id="reset-progress" class="btn btn-secondary">🔄 Reset Progress</button>
+                    <button id="export-progress" class="btn btn-secondary">📥 Export Progress</button>
+                </div>
+                <div class="week-progress" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+                    <h4>Progress by Week</h4>
+                    <!-- Week progress items will be dynamically inserted here -->
                 </div>
             </div>
         </div>
@@ -1632,5 +1659,8 @@
             });
         });
     </script>
+
+    <!-- Progress Tracker Script -->
+    <script src="progress-tracker.js"></script>
 </body>
 </html>
