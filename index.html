@@ -1635,6 +1635,126 @@
         </div>
     </section>
 
+    <!-- Why Learn AI Section -->
+    <section class="why-learn-ai">
+        <div class="container">
+            <h2>🚀 Why Learn AI in 2025?</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">💰</div>
+                    <h3>$150K+ Average Salary</h3>
+                    <p>AI/ML Engineers earn among the highest salaries in tech. Entry-level positions start at $100K+</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">📈</div>
+                    <h3>Explosive Growth</h3>
+                    <p>AI job postings grew 75% in 2024. Demand far exceeds supply of qualified engineers</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🌍</div>
+                    <h3>Work From Anywhere</h3>
+                    <p>Remote AI positions are abundant. Work for top companies from anywhere in the world</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🔮</div>
+                    <h3>Future-Proof Career</h3>
+                    <p>AI is transforming every industry. Skills you learn today will be valuable for decades</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🏆</div>
+                    <h3>Solve Real Problems</h3>
+                    <p>Build systems that cure diseases, fight climate change, and improve lives globally</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">⚡</div>
+                    <h3>Rapid Innovation</h3>
+                    <p>New breakthroughs every week. Be at the cutting edge of the most exciting field in tech</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>❓ Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do I need prior programming experience?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No! We start from absolute basics. Week 1 teaches Python fundamentals. If you can use a computer and are willing to learn, you can do this course.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is it really 100% free?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! All lessons run free on Google Colab. No hidden costs, no premium tiers. We believe AI education should be accessible to everyone.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does it take to complete?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>At 10-15 hours per week, most people complete it in 5-6 months. But go at your own pace! Lessons are available 24/7.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What equipment do I need?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Just a laptop/desktop with internet connection. Google Colab provides free GPU access. Works on Windows, Mac, or Linux.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Will I be job-ready after this?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Week 22 covers job-critical skills analyzed from real 2025 job postings. You'll build 12+ portfolio projects that demonstrate real-world competence.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do I get a certificate?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While we don't offer certificates, you'll build a GitHub portfolio with real projects. Employers care more about what you can build than certificates!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is the content up-to-date?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! Covers 2024-2025 trends: RAG systems, Agentic AI, Multimodal models, LangChain, OpenAI API, and more. Updated regularly.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I get help if I'm stuck?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Join our GitHub Discussions for community support. Every lesson has detailed explanations and practice exercises to reinforce learning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1655,6 +1775,22 @@
                 link.addEventListener('click', function() {
                     console.log('Lesson started!');
                     // Future: track progress
+                });
+            });
+
+            // FAQ Toggle Functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close all other FAQs
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current FAQ
+                    item.classList.toggle('active');
                 });
             });
         });
