@@ -795,6 +795,147 @@ body {
   font-size: 0.95rem;
 }
 
+/* Comparison Section */
+.comparison-section {
+  padding: 4rem 0;
+  background: var(--muted);
+}
+
+.comparison-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.comparison-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--muted-foreground);
+  margin-bottom: 3rem;
+}
+
+.comparison-table-wrapper {
+  overflow-x: auto;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.comparison-table thead {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+}
+
+.comparison-table th {
+  padding: 1.5rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.comparison-table th.learn-ai-col {
+  background: rgba(34, 197, 94, 0.15);
+  text-align: center;
+}
+
+.comparison-table th.competitor-col {
+  text-align: center;
+}
+
+.price-badge {
+  display: inline-block;
+  background: #22c55e;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: calc(var(--radius) * 0.8);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.price-badge-expensive {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: calc(var(--radius) * 0.8);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.comparison-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s ease;
+}
+
+.comparison-table tbody tr:hover {
+  background: var(--muted);
+}
+
+.comparison-table tbody tr.total-row {
+  background: var(--muted);
+  font-size: 1.2rem;
+}
+
+.comparison-table td {
+  padding: 1.25rem 1rem;
+}
+
+.feature-name {
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.check {
+  text-align: center;
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.cross {
+  text-align: center;
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.partial {
+  text-align: center;
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.highlight-price {
+  text-align: center;
+  color: #22c55e;
+  font-size: 1.8rem;
+}
+
+.expensive-price {
+  text-align: center;
+  color: #ef4444;
+  font-size: 1.5rem;
+}
+
+.comparison-note {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--card);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  color: var(--foreground);
+  line-height: 1.6;
+}
+
 /* FAQ Section */
 .faq-section {
   padding: 4rem 0;
@@ -1145,8 +1286,26 @@ footer p {
   .phase-header h2,
   .timeline-section h2,
   .why-learn-ai h2,
+  .comparison-section h2,
   .faq-section h2 {
     font-size: 2rem;
+  }
+
+  .comparison-table {
+    font-size: 0.9rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 1rem 0.75rem;
+  }
+
+  .highlight-price {
+    font-size: 1.5rem;
+  }
+
+  .expensive-price {
+    font-size: 1.2rem;
   }
 
   .week-header {
