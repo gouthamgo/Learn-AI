@@ -241,6 +241,82 @@ body {
   line-height: 1.6;
 }
 
+/* Technologies Section */
+.tech-section {
+  padding: 4rem 0;
+  background: var(--background);
+}
+
+.tech-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.tech-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--muted-foreground);
+  margin-bottom: 3rem;
+}
+
+.tech-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.tech-category {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.tech-category:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.tech-category h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--foreground);
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tech-badge {
+  display: inline-block;
+  background: var(--muted);
+  color: var(--foreground);
+  padding: 0.5rem 1rem;
+  border-radius: calc(var(--radius) * 1.5);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.tech-badge:hover {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
 /* Roadmap Section */
 .roadmap {
   padding: 4rem 0;
@@ -1064,6 +1140,7 @@ footer p {
 
   .how-it-works h2,
   .trends-section h2,
+  .tech-section h2,
   .roadmap h2,
   .phase-header h2,
   .timeline-section h2,
