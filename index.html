@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn AI - Your Personal AI Learning Journey</title>
+    <meta name="description" content="Complete AI learning path from zero to AI engineer in 22 weeks. 66 hands-on lessons, 100% free, job-ready skills for 2025.">
+    <link rel="stylesheet" href="modern-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>🧠 Learn AI</h1>
+                <p class="tagline">From Zero to AI Engineer - Your Complete Learning Path</p>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">22</span>
+                        <span class="stat-label">Weeks</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">66</span>
+                        <span class="stat-label">Lessons</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Free</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Tracker -->
+    <div class="container">
+        <div class="progress-section">
+            <div class="progress-header">
+                <h3>📊 Your Learning Progress</h3>
+                <div class="progress-stats">
+                    <span class="completed-count">0</span> / <span class="total-count">66</span> lessons completed
+                    <span class="percentage-text">0%</span>
+                </div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 0%"></div>
+            </div>
+            <p class="progress-text">0 of 66 lessons completed</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
+                <button id="reset-progress" class="btn btn-secondary">🔄 Reset Progress</button>
+                <button id="export-progress" class="btn btn-secondary">📥 Export Progress</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Trends 2024-2025 -->
+    <section class="trends-section">
+        <div class="container">
+            <h2>🔥 Learn What's Hot in AI Right Now!</h2>
+            <div class="trends-grid">
+                <div class="trend-card">
+                    <div class="trend-icon">🤖</div>
+                    <h3>RAG Systems</h3>
+                    <p>Retrieval-Augmented Generation reduces AI hallucinations by 60-80%. Powers ChatGPT Enterprise!</p>
+                </div>
+                <div class="trend-card">
+                    <div class="trend-icon">🎯</div>
+                    <h3>Agentic AI</h3>
+                    <p>By 2028, 33% of enterprise apps will use AI agents. Learn to build autonomous AI systems!</p>
+                </div>
+                <div class="trend-card">
+                    <div class="trend-icon">🎨</div>
+                    <h3>Multimodal AI</h3>
+                    <p>Text + Images + Audio + Video in one model. Master the future of AI!</p>
+                </div>
+                <div class="trend-card">
+                    <div class="trend-icon">⚡</div>
+                    <h3>Transformers</h3>
+                    <p>The architecture behind GPT, Claude, Gemini. Understand what powers modern AI!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Week 1 Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="phase-header">
+                <h2>📚 Phase 1: Foundations</h2>
+                <p>Master Python and Math fundamentals for AI</p>
+            </div>
+
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 1: Python Basics</h3>
+                    <span class="week-status">🚀 Start Here!</span>
+                </div>
+                <p class="week-description">
+                    Learn the fundamental building blocks of Python programming.
+                    Every AI engineer starts here!
+                </p>
+
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📘</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Variables & Data Types</h4>
+                            <p>Understand how Python stores and manages data - the foundation of everything!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 30-45 min</span>
+                                <span class="level">Beginner</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-1-Foundations/Week-1-Python-Basics/Day-1-Variables-and-Data-Types.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab (FREE!)
+                                </a>
+                                <a href="Phase-1-Foundations/Week-1-Python-Basics/Day-1-Variables-and-Data-Types.ipynb"
+                                   class="btn btn-secondary" download>
+                                    📥 Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📗</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Lists & Loops</h4>
+                            <p>Handle multiple pieces of data and automate repetitive tasks like a pro!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 45-60 min</span>
+                                <span class="level">Beginner</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-1-Foundations/Week-1-Python-Basics/Day-2-Lists-and-Loops.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab (FREE!)
+                                </a>
+                                <a href="Phase-1-Foundations/Week-1-Python-Basics/Day-2-Lists-and-Loops.ipynb"
+                                   class="btn btn-secondary" download>
+                                    📥 Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📕</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Functions</h4>
+                            <p>Create reusable code blocks that make you 10x more productive!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 45-60 min</span>
+                                <span class="level">Beginner</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-1-Foundations/Week-1-Python-Basics/Day-3-Functions.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab (FREE!)
+                                </a>
+                                <a href="Phase-1-Foundations/Week-1-Python-Basics/Day-3-Functions.ipynb"
+                                   class="btn btn-secondary" download>
+                                    📥 Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 2 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 2: NumPy & Pandas</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Master data manipulation - the foundation of ALL AI/ML work. 50-100x faster than Python lists!
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📊</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: NumPy Fundamentals</h4>
+                            <p>Arrays, matrices, and the math that powers neural networks. Learn RAG embeddings!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Beginner</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-1-Foundations/Week-2-NumPy-Pandas/Day-1-NumPy-Fundamentals.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📋</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Pandas Fundamentals</h4>
+                            <p>DataFrames = Excel for AI! Handle real datasets like a pro data scientist.</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Beginner</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-1-Foundations/Week-2-NumPy-Pandas/Day-2-Pandas-Fundamentals.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🔧</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Data Manipulation</h4>
+                            <p>Clean, merge, and engineer features. Build production ML pipelines!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-1-Foundations/Week-2-NumPy-Pandas/Day-3-Data-Manipulation.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 3 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 3: Data Visualization</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Create beautiful, interactive visualizations. Build AI dashboards that impress!</p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📈</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Matplotlib Fundamentals</h4>
+                            <p>Master plots, charts, and publication-ready figures for ML models.</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Beginner</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-1-Foundations/Week-3-Data-Visualization/Day-1-Matplotlib-Fundamentals.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📊</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Seaborn Statistical Plots</h4>
+                            <p>Beautiful statistical visualizations, heatmaps, and correlation analysis.</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Beginner</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-1-Foundations/Week-3-Data-Visualization/Day-2-Seaborn-Statistical-Plots.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🎨</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Interactive Visualizations</h4>
+                            <p>Plotly dashboards, 3D plots, and animated visualizations for AI systems.</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-1-Foundations/Week-3-Data-Visualization/Day-3-Interactive-Visualizations.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 4 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 4: Math for AI</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Understand the math that powers ChatGPT, transformers, and neural networks!
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🔢</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Linear Algebra for AI</h4>
+                            <p>Vectors, matrices, and attention mechanisms. How transformers actually work!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-1-Foundations/Week-4-Math-for-AI/Day-1-Linear-Algebra-for-AI.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📐</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Calculus & Optimization</h4>
+                            <p>Gradients, backpropagation, and how AI learns. Train networks from scratch!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-1-Foundations/Week-4-Math-for-AI/Day-2-Calculus-and-Optimization.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🎲</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Probability & Statistics</h4>
+                            <p>Distributions, Bayes' Theorem, and A/B testing. Make data-driven decisions!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-1-Foundations/Week-4-Math-for-AI/Day-3-Probability-and-Statistics.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 5 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 5: Statistics & Probability for ML</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Master the statistical foundations of machine learning. A/B testing, hypothesis testing, and more!
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📊</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Descriptive Statistics</h4>
+                            <p>Mean, median, variance - analyze AI model performance like a data scientist!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Beginner</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-1-Foundations/Week-5-Statistics-Probability/Day-1-Descriptive-Statistics.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🎲</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Probability Theory</h4>
+                            <p>Bayes' Theorem, distributions - build a Naive Bayes spam classifier!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-1-Foundations/Week-5-Statistics-Probability/Day-2-Probability-Theory.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🔬</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Statistical Testing</h4>
+                            <p>A/B testing, p-values - make scientific decisions about AI models!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-1-Foundations/Week-5-Statistics-Probability/Day-3-Statistical-Testing.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 2: Machine Learning -->
+    <section class="content-section">
+        <div class="container">
+            <div class="phase-header">
+                <h2>🤖 Phase 2: Machine Learning</h2>
+                <p>Build intelligent systems that learn from data</p>
+            </div>
+
+            <!-- Week 6 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 6: Introduction to Machine Learning</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Your first real ML models! Learn sklearn and build predictive systems.
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🎯</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: What is Machine Learning?</h4>
+                            <p>Supervised, unsupervised, reinforcement - build your first classifier!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Beginner</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-2-Machine-Learning/Week-6-Intro-to-ML/Day-1-What-is-Machine-Learning.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🔧</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Data Preprocessing</h4>
+                            <p>Scaling, encoding, train-test splits - prepare data for RAG systems!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Beginner</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-2-Machine-Learning/Week-6-Intro-to-ML/Day-2-Data-Preprocessing.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🏠</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: First ML Model</h4>
+                            <p>Build a complete house price predictor with Linear Regression!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-2-Machine-Learning/Week-6-Intro-to-ML/Day-3-First-ML-Model.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 7 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 7: Supervised Learning Algorithms</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Master 10 powerful ML algorithms - from decision trees to SVMs!
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🌳</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Classification Algorithms</h4>
+                            <p>Logistic Regression, Decision Trees, Random Forests - build spam detection!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-2-Machine-Learning/Week-7-Supervised-Learning/Day-1-Classification-Algorithms.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🎨</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Advanced Classifiers</h4>
+                            <p>SVM, KNN, Naive Bayes - recognize handwritten digits!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-2-Machine-Learning/Week-7-Supervised-Learning/Day-2-Advanced-Classifiers.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📈</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Regression Algorithms</h4>
+                            <p>Linear, Polynomial, Ridge, Lasso - forecast sales and revenue!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-2-Machine-Learning/Week-7-Supervised-Learning/Day-3-Regression-Algorithms.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 8 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 8: Model Evaluation & Tuning</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Build production-grade models - evaluate properly and optimize for best results!
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📊</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Evaluation Metrics</h4>
+                            <p>Precision, Recall, F1, ROC-AUC - evaluate RAG retrieval systems!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-2-Machine-Learning/Week-8-Model-Evaluation/Day-1-Evaluation-Metrics.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🔄</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Cross-Validation</h4>
+                            <p>K-Fold, Stratified K-Fold - get reliable performance estimates!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-2-Machine-Learning/Week-8-Model-Evaluation/Day-2-Cross-Validation.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">⚙️</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Hyperparameter Tuning</h4>
+                            <p>Grid Search, Random Search - optimize multimodal classifiers!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-2-Machine-Learning/Week-8-Model-Evaluation/Day-3-Hyperparameter-Tuning.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 9 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 9: Unsupervised Learning</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Discover hidden patterns in data - no labels needed! Clustering, dimensionality reduction, and anomaly detection.
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🎯</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Clustering Algorithms</h4>
+                            <p>K-Means, Hierarchical, DBSCAN - segment customers, cluster RAG documents!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-2-Machine-Learning/Week-9-Unsupervised-Learning/Day-1-Clustering-Algorithms.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📉</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Dimensionality Reduction</h4>
+                            <p>PCA, t-SNE, UMAP - visualize transformer embeddings in 2D/3D!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-2-Machine-Learning/Week-9-Unsupervised-Learning/Day-2-Dimensionality-Reduction.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🚨</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Anomaly Detection</h4>
+                            <p>Isolation Forest, One-Class SVM, Autoencoders - detect fraud and unusual AI behavior!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-2-Machine-Learning/Week-9-Unsupervised-Learning/Day-3-Anomaly-Detection.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 10 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 10: Ensemble Methods & Advanced ML</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Learn Kaggle-winning techniques! XGBoost, LightGBM, stacking - build production ML pipelines.
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🌲</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Bagging and Boosting</h4>
+                            <p>Random Forests, AdaBoost - improve RAG retrieval accuracy!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-2-Machine-Learning/Week-10-Ensemble-Methods/Day-1-Bagging-and-Boosting.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">⚡</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Gradient Boosting</h4>
+                            <p>XGBoost, LightGBM, CatBoost - Kaggle competition winners!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-2-Machine-Learning/Week-10-Ensemble-Methods/Day-2-Gradient-Boosting.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🏗️</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Advanced ML Techniques</h4>
+                            <p>Feature engineering, stacking, pipelines - production ML for Agentic AI!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-2-Machine-Learning/Week-10-Ensemble-Methods/Day-3-Advanced-ML-Techniques.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 3: Deep Learning -->
+    <section class="content-section">
+        <div class="container">
+            <div class="phase-header">
+                <h2>🧠 Phase 3: Deep Learning</h2>
+                <p>Build neural networks and understand modern AI architectures</p>
+            </div>
+
+            <!-- Week 11 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 11: Neural Networks Fundamentals</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Build neural networks from scratch! Understand how ChatGPT and transformers actually work.
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🧠</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Building Your First Neural Network</h4>
+                            <p>Neurons, layers, activations - build from scratch with NumPy!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-11-Neural-Networks/Day-1-Building-Your-First-Neural-Network.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📚</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Training Neural Networks</h4>
+                            <p>Backpropagation, gradient descent, Adam optimizer - train MNIST classifier!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-11-Neural-Networks/Day-2-Training-Neural-Networks.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">⚙️</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Improving Neural Networks</h4>
+                            <p>Regularization, BatchNorm, learning rate scheduling - production techniques!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-11-Neural-Networks/Day-3-Improving-Neural-Networks.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 12 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 12: Deep Learning with TensorFlow & PyTorch</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Master the frameworks used by Google, OpenAI, and Meta. Build production-ready deep learning systems!
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🔷</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Introduction to TensorFlow</h4>
+                            <p>Keras Sequential & Functional APIs - build multimodal models!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-12-Deep-Learning-Frameworks/Day-1-Introduction-to-TensorFlow.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🔥</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Introduction to PyTorch</h4>
+                            <p>Tensors, autograd, nn.Module - the framework behind GPT and Claude!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-12-Deep-Learning-Frameworks/Day-2-Introduction-to-PyTorch.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🎨</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Deep Learning Project</h4>
+                            <p>Complete Fashion-MNIST classifier - portfolio-ready project!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-12-Deep-Learning-Frameworks/Day-3-Deep-Learning-Project.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 13 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 13: CNNs & Computer Vision</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Master image recognition! Build CNNs, use transfer learning, and understand computer vision systems.
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🖼️</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Introduction to CNNs</h4>
+                            <p>Convolutional layers, pooling, feature maps - build CIFAR-10 classifier!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-13-CNNs-Computer-Vision/Day-1-Introduction-to-CNNs.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🏗️</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Advanced CNN Architectures</h4>
+                            <p>VGG, ResNet, MobileNet - transfer learning with ImageNet!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-13-CNNs-Computer-Vision/Day-2-Advanced-CNN-Architectures.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">👁️</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Computer Vision Applications</h4>
+                            <p>YOLO, segmentation, face recognition - build real CV systems!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-13-CNNs-Computer-Vision/Day-3-Computer-Vision-Applications.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 14 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 14: RNNs & Sequence Models</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Master sequential data! LSTMs, GRUs, and the foundations of language models.
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🔄</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Introduction to RNNs</h4>
+                            <p>Sequential processing, hidden states - predict stock prices!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-14-RNNs-Sequence-Models/Day-1-Introduction-to-RNNs.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">💬</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: LSTMs and GRUs</h4>
+                            <p>Advanced RNNs - sentiment analysis and text generation!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-14-RNNs-Sequence-Models/Day-2-LSTMs-and-GRUs.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🤖</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Sequence-to-Sequence Models</h4>
+                            <p>Encoder-decoder, attention basics - build a chatbot!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-14-RNNs-Sequence-Models/Day-3-Sequence-to-Sequence-Models.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 15 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 15: NLP & Text Processing</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Master language AI! From embeddings to transformers with HuggingFace.
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📝</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: NLP Fundamentals</h4>
+                            <p>Tokenization, Word2Vec, TF-IDF - build spam detector!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Intermediate</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-15-NLP-Text-Processing/Day-1-NLP-Fundamentals.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🔍</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Advanced NLP Techniques</h4>
+                            <p>NER, POS tagging, deep learning - categorize news articles!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-15-NLP-Text-Processing/Day-2-Advanced-NLP-Techniques.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🤗</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Modern NLP with Transformers</h4>
+                            <p>BERT, GPT, T5 with HuggingFace - sentiment and summarization!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-15-NLP-Text-Processing/Day-3-Modern-NLP-with-Transformers.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 16 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 16: Transformers & Attention Mechanisms</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Understand ChatGPT! Master transformers, fine-tune LLMs, and build RAG systems.
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">⚡</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Attention Mechanisms</h4>
+                            <p>Query, Key, Value - build attention from scratch!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 60-90 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-16-Transformers-Attention/Day-1-Attention-Mechanisms.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🏛️</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Transformer Architecture</h4>
+                            <p>Complete transformer - understand GPT, BERT, and Claude!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-16-Transformers-Attention/Day-2-Transformer-Architecture.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🚀</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Working with LLMs</h4>
+                            <p>Fine-tune GPT-2, build RAG systems, master prompt engineering!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-3-Deep-Learning/Week-16-Transformers-Attention/Day-3-Working-with-LLMs.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 4: Advanced AI -->
+    <section class="content-section">
+        <div class="container">
+            <div class="phase-header">
+                <h2>🚀 Phase 4: Advanced AI</h2>
+                <p>Master cutting-edge AI and launch your career</p>
+            </div>
+
+            <!-- Week 17 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 17: Generative AI & GANs</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Create AI art! Master GANs, diffusion models, and DALL-E-style generation.
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🎨</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Introduction to Generative AI</h4>
+                            <p>Autoencoders, VAEs - build image denoising systems!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-17-Generative-AI-GANs/Day-1-Introduction-to-Generative-AI.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">⚔️</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: GANs Fundamentals</h4>
+                            <p>Generator vs Discriminator - create realistic images from noise!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-17-Generative-AI-GANs/Day-2-GANs-Fundamentals.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🖼️</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Advanced Generative Models</h4>
+                            <p>DALL-E, Stable Diffusion, Midjourney - master prompt engineering!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-17-Generative-AI-GANs/Day-3-Advanced-Generative-Models.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 18 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 18: Reinforcement Learning</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Build game-playing AI! Understand how AlphaGo and ChatGPT RLHF work.
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🎮</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: RL Fundamentals</h4>
+                            <p>Q-Learning, MDPs - build grid world agents!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-18-Reinforcement-Learning/Day-1-RL-Fundamentals.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🧠</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Deep Reinforcement Learning</h4>
+                            <p>DQN, Policy Gradients, Actor-Critic - train CartPole agent!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-18-Reinforcement-Learning/Day-2-Deep-RL.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🏆</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Advanced RL Applications</h4>
+                            <p>AlphaGo, robotics, multi-agent - real-world optimization!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-18-Reinforcement-Learning/Day-3-Advanced-RL-Applications.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 19 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 19: MLOps & Deployment</h3>
+                    <span class="week-status">✅ Available Now!</span>
+                </div>
+                <p class="week-description">
+                    Deploy models to production! MLflow, Docker, AWS, and cloud deployment mastery.
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🚀</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Model Deployment</h4>
+                            <p>Flask, FastAPI, Docker - deploy ML models as APIs!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-19-MLOps-Deployment/Day-1-Model-Deployment.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📊</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: MLOps Best Practices</h4>
+                            <p>MLflow, monitoring, A/B testing - production ML pipelines!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-19-MLOps-Deployment/Day-2-MLOps-Best-Practices.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">☁️</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Cloud Deployment</h4>
+                            <p>AWS, GCP, HuggingFace Spaces - deploy to the cloud!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-19-MLOps-Deployment/Day-3-Cloud-Deployment.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 20 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <h3>Week 20: Capstone Project & Portfolio</h3>
+                    <span class="week-status">🎓 Final Week!</span>
+                </div>
+                <p class="week-description">
+                    Build your portfolio! Create impressive projects and land your dream AI job.
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📋</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Project Planning</h4>
+                            <p>Choose projects, plan scope, set up GitHub portfolio!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">All Levels</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-20-Capstone-Portfolio/Day-1-Project-Planning.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🔨</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Building Your Project</h4>
+                            <p>Multi-modal AI project - combine CV + NLP for portfolio!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 120-180 min</span>
+                                <span class="level">All Levels</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-20-Capstone-Portfolio/Day-2-Building-Your-Project.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">💼</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Portfolio & Career</h4>
+                            <p>Resume, interviews, job search - land your dream AI role!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 90-120 min</span>
+                                <span class="level">All Levels</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-20-Capstone-Portfolio/Day-3-Portfolio-and-Career.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 21: BONUS - Industry-Critical Skills -->
+            <div class="week-card" style="border: 3px solid #ffd700; background: linear-gradient(135deg, #fff8dc 0%, #ffffff 100%);">
+                <div class="week-header">
+                    <h3>⭐ Week 21: Industry-Critical Skills (BONUS)</h3>
+                    <span class="week-status" style="background: linear-gradient(135deg, #ffd700, #ffed4e); color: #000;">🎯 2025 Job Skills!</span>
+                </div>
+                <p class="week-description" style="font-weight: bold;">
+                    Master the skills that appear in REAL 2025 job postings! SQL, Advanced RAG, LLM Agents, Production ML at scale.
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🗄️</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: SQL & Vector Databases</h4>
+                            <p>SQL for AI (26% of jobs!) + Pinecone, Weaviate, ChromaDB for production RAG!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 120-150 min</span>
+                                <span class="level">Production-Ready</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-21-Industry-Critical-Skills/Day-1-SQL-and-Vector-Databases.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🤖</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Advanced RAG + Agents + LoRA</h4>
+                            <p>Hybrid search, re-ranking, LLM agents, LoRA/QLoRA - what companies actually use!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 150-180 min</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-21-Industry-Critical-Skills/Day-2-Advanced-RAG-Agents-LoRA.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">⚡</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Production ML at Scale</h4>
+                            <p>PySpark for big data, Kubernetes for deployment, Graph DBs for knowledge graphs!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 150-180 min</span>
+                                <span class="level">Enterprise-Scale</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-21-Industry-Critical-Skills/Day-3-Production-ML-at-Scale.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 22: BONUS - Job-Critical Skills -->
+            <div class="week-card" style="border: 3px solid #ff6b6b; background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);">
+                <div class="week-header">
+                    <h3>🎯 Week 22: Job-Critical Skills (BONUS)</h3>
+                    <span class="week-status" style="background: linear-gradient(135deg, #ff6b6b, #ff8e8e); color: #fff;">🔥 Close ALL Gaps!</span>
+                </div>
+                <p class="week-description" style="font-weight: bold;">
+                    The FINAL 3 skills missing from real job postings: RecSys, Time Series, Orchestration. 100% job-ready after this!
+                </p>
+                <div class="lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-icon">🎯</div>
+                        <div class="lesson-content">
+                            <h4>Day 1: Recommender Systems</h4>
+                            <p>Collaborative filtering, Matrix Factorization (SVD), Hybrid systems, Neural RecSys - like Netflix, Amazon!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 150-180 min</span>
+                                <span class="level">Industry-Critical</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-22-Job-Critical-Skills/Day-1-Recommender-Systems.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">📈</div>
+                        <div class="lesson-content">
+                            <h4>Day 2: Time Series Forecasting</h4>
+                            <p>ARIMA, SARIMA, Prophet, LSTMs for time series - demand forecasting, stock prediction!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 150-180 min</span>
+                                <span class="level">Business-Critical</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-22-Job-Critical-Skills/Day-2-Time-Series-Forecasting.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-icon">⚙️</div>
+                        <div class="lesson-content">
+                            <h4>Day 3: Apache Airflow & Orchestration</h4>
+                            <p>ML pipeline orchestration with Airflow, Kubeflow, Prefect - automate everything!</p>
+                            <div class="lesson-meta">
+                                <span class="duration">⏱️ 150-180 min</span>
+                                <span class="level">Production-Scale</span>
+                            </div>
+                            <div class="lesson-buttons">
+                                <a href="https://colab.research.google.com/github/gouthamgo/Learn-AI/blob/main/Phase-4-Advanced-AI/Week-22-Job-Critical-Skills/Day-3-Apache-Airflow-and-ML-Orchestration.ipynb"
+                                   class="btn btn-primary" target="_blank">
+                                    🚀 Open in Google Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>🎯 How to Use This Course</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Click "Open in Google Colab"</h3>
+                    <p>No installation needed! Runs FREE in your browser</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Read & Run Code</h3>
+                    <p>Every line is explained. Click ▶️ to run each cell</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Do the Exercises</h3>
+                    <p>Practice makes perfect! Complete all challenges</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Build Projects</h3>
+                    <p>Apply what you learned to real portfolio projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="roadmap">
+        <div class="container">
+            <h2>🗺️ The Complete Journey</h2>
+            <div class="roadmap-grid">
+                <div class="roadmap-phase">
+                    <h3>Phase 1: Foundations</h3>
+                    <p>Weeks 1-5 ✅</p>
+                    <ul>
+                        <li>Python Basics</li>
+                        <li>NumPy & Pandas</li>
+                        <li>Data Visualization</li>
+                        <li>Math for AI</li>
+                        <li>Statistics & Probability</li>
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <h3>Phase 2: Machine Learning</h3>
+                    <p>Weeks 6-10 ✅</p>
+                    <ul>
+                        <li>Intro to ML ✅</li>
+                        <li>Supervised Learning ✅</li>
+                        <li>Model Evaluation ✅</li>
+                        <li>Unsupervised Learning ✅</li>
+                        <li>Ensemble Methods ✅</li>
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <h3>Phase 3: Deep Learning</h3>
+                    <p>Weeks 11-16 ✅</p>
+                    <ul>
+                        <li>Neural Networks ✅</li>
+                        <li>TensorFlow & PyTorch ✅</li>
+                        <li>CNNs & Computer Vision ✅</li>
+                        <li>RNNs & Sequence Models ✅</li>
+                        <li>NLP & Text Processing ✅</li>
+                        <li>Transformers & Attention ✅</li>
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <h3>Phase 4: Advanced AI</h3>
+                    <p>Weeks 17-22 ✅</p>
+                    <ul>
+                        <li>Generative AI & GANs ✅</li>
+                        <li>Reinforcement Learning ✅</li>
+                        <li>MLOps & Deployment ✅</li>
+                        <li>Capstone & Portfolio ✅</li>
+                        <li>⭐ Industry Skills (Bonus) ✅</li>
+                        <li>🎯 Job-Critical Skills (Bonus) ✅</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>🚀 Built with ❤️ for aspiring AI engineers</p>
+            <p>100% Free • 100% Interactive • 100% Practical</p>
+            <p class="github-link">
+                ⭐ Star this repo on <a href="https://github.com/gouthamgo/Learn-AI" target="_blank">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Progress Tracker Script -->
+    <script src="progress-tracker.js"></script>
+</body>
+</html>

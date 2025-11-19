@@ -1,0 +1,537 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #8b5cf6;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --dark: #1f2937;
+    --light: #f9fafb;
+    --gray: #6b7280;
+    --border: #e5e7eb;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background: var(--light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.tagline {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.stat {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Trends Section */
+.trends-section {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.trends-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.trends-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trend-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.trend-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.trend-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.trend-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.trend-card p {
+    opacity: 0.95;
+    line-height: 1.6;
+}
+
+/* Progress Section */
+.progress-section {
+    padding: 40px 20px;
+    background: white;
+    margin-top: -30px;
+    border-radius: 20px 20px 0 0;
+}
+
+.progress-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
+}
+
+.progress-card h2 {
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.progress-bar {
+    background: var(--border);
+    height: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, var(--success-color), var(--primary-color));
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    transition: width 0.3s ease;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.progress-info p {
+    color: var(--gray);
+}
+
+/* Content Section */
+.content-section {
+    padding: 60px 20px;
+    background: white;
+}
+
+.phase-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.phase-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.phase-header p {
+    font-size: 1.1rem;
+    color: var(--gray);
+}
+
+/* Week Cards */
+.week-card {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.week-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+}
+
+.week-card.locked {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.week-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.week-header h3 {
+    font-size: 1.8rem;
+    color: var(--dark);
+}
+
+.week-status {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: var(--success-color);
+    color: white;
+}
+
+.week-card.locked .week-status {
+    background: var(--gray);
+}
+
+.week-description {
+    color: var(--gray);
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+}
+
+/* Lessons */
+.lessons {
+    display: grid;
+    gap: 20px;
+}
+
+.lesson-card {
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.lesson-card:hover {
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.lesson-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.lesson-content {
+    flex: 1;
+}
+
+.lesson-content h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.lesson-content p {
+    color: var(--gray);
+    margin-bottom: 15px;
+}
+
+.lesson-meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.duration {
+    color: var(--gray);
+}
+
+.level {
+    background: var(--primary-color);
+    color: white;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+}
+
+.lesson-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--dark);
+    border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* How It Works */
+.how-it-works {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+    padding: 80px 20px;
+}
+
+.how-it-works h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--dark);
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.step {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+    background: var(--primary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+.step h3 {
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.step p {
+    color: var(--gray);
+}
+
+/* Roadmap */
+.roadmap {
+    padding: 80px 20px;
+    background: white;
+}
+
+.roadmap h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--dark);
+}
+
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.roadmap-phase {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 35px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.roadmap-phase:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.3);
+}
+
+.roadmap-phase h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.roadmap-phase p {
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.roadmap-phase ul {
+    list-style: none;
+}
+
+.roadmap-phase li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.roadmap-phase li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.github-link {
+    margin-top: 20px;
+}
+
+.github-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.github-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .week-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .lesson-card {
+        flex-direction: column;
+    }
+
+    .progress-info {
+        flex-direction: column;
+    }
+
+    .lesson-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
