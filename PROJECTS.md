@@ -33,6 +33,20 @@ Everything runs on Colab's free tier. Two caveats worth knowing before you start
 | CV Edge | Nothing | Downloads pretrained MobileNetV3 weights. |
 | The rest | Nothing | Synthetic data, generated in-notebook. |
 
+### Verification status
+
+Every project below was executed, not just reviewed. Results as of the last run:
+
+| Project | Executed | Notes |
+|---------|----------|-------|
+| Model Performance Reporter | ✅ pass | 8 cells, no failures |
+| Fraud Detection | ✅ pass | trains XGBoost + LightGBM on 100k rows |
+| Recommendation Engine | ✅ pass | generated API verified to load standalone |
+| LLM Agent | ✅ pass | runs, but partly stubbed — see below |
+| MLOps Pipeline | ✅ pass | 6 real MLflow runs recorded |
+| CV Edge Deployment | ✅ pass | fp32→int8→ONNX, benchmarked |
+| RAG Chatbot | ⚠️ partial | chunking verified; model download needs network |
+
 **The LLM Agent notebook is the one exception to "it works."** Its schemas, ReAct loop and
 tool dispatch are real, but the tools return canned strings and the model's turns are
 hardcoded so it runs without an API key. The notebook says so at the top and marks the two
