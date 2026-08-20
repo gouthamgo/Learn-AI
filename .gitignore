@@ -1,0 +1,29 @@
+# Everything the project notebooks generate at runtime goes here.
+# Notebooks write to ./artifacts/ so they never litter the repo root.
+artifacts/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model / experiment tracking output
+mlruns/
+mlflow.db
+.chroma/
+chroma_db/
+*.pkl
+*.onnx
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

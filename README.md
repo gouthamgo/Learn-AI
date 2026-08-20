@@ -1,27 +1,28 @@
 # 🧠 Learn AI - Your Complete AI Learning Journey
 
 ![Status](https://img.shields.io/badge/Status-Complete-success)
-![Lessons](https://img.shields.io/badge/Lessons-66-blue)
+![Lessons](https://img.shields.io/badge/Lessons-67-blue)
+![Projects](https://img.shields.io/badge/Projects-7-teal)
 ![Weeks](https://img.shields.io/badge/Weeks-22-purple)
 ![Free](https://img.shields.io/badge/Cost-100%25%20Free-brightgreen)
 ![Job Ready](https://img.shields.io/badge/Job%20Market-2025%20Aligned-orange)
 
-**From Zero to Senior AI Engineer in 22 Weeks** - A complete, hands-on learning path with 66 interactive lessons, real projects, and industry-critical skills for 2025!
+**From Zero to Senior AI Engineer in 22 Weeks** - A complete, hands-on learning path with 67 interactive lessons and 7 standalone projects.
 
 ## 🎯 What Makes This Different?
 
-✨ **100% Complete** - All 22 weeks live with 66 lessons
+✨ **100% Complete** - All 22 weeks live with 67 lessons
 🎯 **2025 Job-Market Aligned** - Weeks 21-22 cover skills from actual job postings
 💼 **FAANG-Ready** - Advanced RAG, LLM Agents, LoRA, Kubernetes, Spark
 🚀 **Production Skills** - Not just theory - build real systems
 📱 **Interactive** - Every lesson runs in Google Colab (FREE!)
-🏆 **Portfolio Projects** - 12 impressive projects for your resume
+🏆 **Portfolio Projects** - 7 substantial projects, plus mini-projects in each lesson
 
 ## 🔥 What You'll Master
 
 By completing this course, you'll have:
-- ✅ **66 hands-on lessons** from Python basics to production ML
-- ✅ **12 portfolio-ready AI projects** to land interviews
+- ✅ **67 hands-on lessons** from Python basics to production ML
+- ✅ **7 standalone projects** you can extend into portfolio pieces
 - ✅ **Complete AI stack**: Python, ML, Deep Learning, LLMs, Production
 - ✅ **2025 Industry Skills**: SQL, Vector DBs, Advanced RAG, LLM Agents, LoRA, Kubernetes, PySpark, RecSys, Time Series, Airflow
 - ✅ **Job-ready skills** for Senior ML Engineer, AI Engineer, MLOps roles
@@ -304,36 +305,40 @@ Start at Week 1 and go sequentially. Don't skip weeks!
 
 ## 🏆 Portfolio Projects
 
-Build these impressive projects:
+Seven standalone projects ship with the course — longer than the lessons, and built to be
+extended into portfolio pieces. Full details in **[PROJECTS.md](PROJECTS.md)**.
 
-1. **Model Performance Reporter** (Week 1)
-2. **Data Analysis Dashboard** (Week 2-3)
-3. **Statistical Analysis Tool** (Week 5)
-4. **House Price Predictor** (Week 6)
-5. **Customer Segmentation System** (Week 9)
-6. **Image Classifier** (Week 13)
-7. **Sentiment Analyzer** (Week 15)
-8. **RAG Chatbot** (Week 16)
-9. **AI Image Generator** (Week 17)
-10. **RL Game Agent** (Week 18)
-11. **Production ML Service** (Week 19)
-12. **Multi-Modal AI Capstone** (Week 20)
+| Project | Week |
+|---------|------|
+| [Model Performance Reporter](Phase-1-Foundations/Week-1-Python-Basics/Project-Model-Performance-Reporter.ipynb) | 1 |
+| [Fraud Detection on Imbalanced Data](Phase-2-Machine-Learning/Week-10-Ensemble-Methods/Project-Fraud-Detection-Imbalanced.ipynb) | 10 |
+| [CV Edge Deployment](Phase-3-Deep-Learning/Week-13-CNNs-Computer-Vision/Project-CV-Edge-Deployment.ipynb) | 13 |
+| [RAG Chatbot](Phase-3-Deep-Learning/Week-16-Transformers-Attention/Project-RAG-Chatbot.ipynb) | 16 |
+| [MLOps Pipeline](Phase-4-Advanced-AI/Week-19-MLOps-Deployment/Project-Production-MLOps-Pipeline.ipynb) | 19 |
+| [LLM Agent System](Phase-4-Advanced-AI/Week-21-Industry-Critical-Skills/Project-LLM-Agent-System.ipynb) | 21 |
+| [Recommendation Engine](Phase-4-Advanced-AI/Week-22-Job-Critical-Skills/Project-Recommendation-Engine.ipynb) | 22 |
+
+Smaller mini-projects are built into the individual lessons throughout.
 
 ## 🎯 Job Market Alignment (2025)
 
-This curriculum covers **100% of critical skills** from actual job postings:
+Where each commonly-requested skill is covered:
 
-| Skill | Job Postings | Covered |
-|-------|--------------|---------|
-| Python | 56% | ✅ Week 1 |
-| SQL | 26% | ✅ Week 21 |
-| PyTorch/TensorFlow | 38% | ✅ Week 12 |
-| Cloud Platforms | 18% | ✅ Week 19 |
-| LoRA/Fine-tuning | 21% | ✅ Week 21 |
-| Spark/Big Data | 15% | ✅ Week 21 |
-| Vector Databases | Top 2025 | ✅ Week 21 |
-| Advanced RAG | Most Demanded | ✅ Week 21 |
-| LLM Agents | Emerging | ✅ Week 21 |
+| Skill | Covered in |
+|-------|-----------|
+| Python | Week 1 |
+| SQL | Week 21 |
+| PyTorch / TensorFlow | Week 12 |
+| Cloud platforms | Week 19 |
+| LoRA / fine-tuning | Week 21 |
+| Spark / big data | Week 21 |
+| Vector databases | Week 21 |
+| Advanced RAG | Weeks 16, 21 |
+| LLM agents | Week 21 |
+
+> This table maps skills to weeks. It deliberately does not claim what percentage of
+> job postings ask for each one — those numbers move constantly and any figure here
+> would be stale or unsourced. Check current postings in your own market.
 
 **You'll be competitive for:**
 - Senior Machine Learning Engineer
@@ -444,6 +449,20 @@ Found an error or want to add content?
 - Practice with extra exercises
 - Build projects to solidify learning!
 
+## 📖 Repository Guide
+
+| File | What it's for |
+|------|---------------|
+| [README.md](README.md) | You are here — curriculum overview and quick start |
+| [PROJECTS.md](PROJECTS.md) | The 7 standalone projects: scope, what's real, how to extend them |
+| [QUICK-START.md](QUICK-START.md) | Setup paths — CI/CD, deployment, or just start learning |
+| [CI-CD-GUIDE.md](CI-CD-GUIDE.md) | How the auto-merge pipeline works and how to configure it |
+| [DEPLOYMENT.md](DEPLOYMENT.md) | Deploying the site to Vercel / GitHub Pages |
+| [CAREER-PREP-GUIDE.md](CAREER-PREP-GUIDE.md) | Résumé, interview and job-search material |
+| [TROUBLESHOOTING.md](TROUBLESHOOTING.md) | Common problems and fixes |
+
+---
+
 ## 📜 License
 
 This project is open source and available under the MIT License.
@@ -455,16 +474,6 @@ This project is open source and available under the MIT License.
 1. **Open** `index.html` in your browser (or visit GitHub Pages)
 2. **Click** "Open in Google Colab" on Week 1, Day 1
 3. **Start learning!** 🚀
-
----
-
-## 🌟 Success Stories
-
-*"This curriculum took me from zero coding experience to landing an ML Engineer role at a FAANG company in 6 months!"*
-
-*"Week 21's industry skills (especially advanced RAG and LoRA) were exactly what companies asked about in interviews."*
-
-*"The hands-on projects made my portfolio stand out. Got 3 interview requests in my first week of job hunting!"*
 
 ---
 
@@ -500,7 +509,7 @@ This project is open source and available under the MIT License.
 
 💼 **Hiring?** Check out students who've completed this curriculum - they're ready!
 
-🔥 **22 Weeks | 66 Lessons | 100% Free | Industry-Ready**
+🔥 **22 Weeks | 67 Lessons | 7 Projects | 100% Free**
 
 ---
 
